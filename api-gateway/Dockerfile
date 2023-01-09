@@ -1,7 +1,7 @@
-FROM gradle:6-alpine AS build
+FROM gradle:6.9.3-jdk17-alpine AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
-RUN gradle build --no-daemon
+RUN gradle build
 
 
 FROM openjdk:17-alpine
