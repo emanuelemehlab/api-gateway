@@ -4,7 +4,7 @@ services:
     build:
       context: ./service-discovery-server/
     container_name: service-discovery-server
-    image: service-discovery-server:latest
+    image: pievit/service-discovery-server:latest
     ports:
       - "8761:8761"
     networks:
@@ -13,7 +13,7 @@ services:
     build:
       context: ./api-gateway/
     container_name: api-gateway
-    image: api-gateway:latest
+    image: pievit/api-gateway:latest
     environment:
       - eureka.client.serviceUrl.defaultZone=http://service-discovery-server:8761/eureka/
     ports:
